@@ -1,0 +1,70 @@
+body {
+    font-family: helvetica;
+    color: #333333;
+    background: #cccccc;
+    height: 100%;
+}
+
+#header {
+    color: #EEEEEE;
+    height: 34px;
+    font-weight: bold;
+    background: #666666;
+}
+
+#footer {
+    color: #EEEEEE;
+    height: 34px;
+    font-weight: bold;
+    background: #666666;
+}
+
+#userField {
+    width: 25%;
+    height: 30px;
+    position: relative;
+    margin-top: 1px;
+    color: #000000;
+}
+
+#roomSelect {
+    width: 25%;
+    height: 30px;
+    margin-top: 1px;
+    color: #000000;
+}
+
+#chat {
+    min-height: 500px;
+    max-height: 500px;
+    /*max-height: 90%;*/
+    /*overflow: scroll;*/
+    overflow-y: auto;
+    right: 10px;
+    left: 30px;
+    background: #AAAAAA;
+}
+
+.msg {
+    background: #afd9ee;
+}
+
+.others {
+    background: #FF9999;
+}
+
+.input {
+    color: #000000;
+}
+
+#textField {
+    position: relative;
+    height: 30px;
+    width: 60%;
+    color: #000000;
+}
+
+.submit {
+    min-width: 70px;
+    width: 8%;
+}

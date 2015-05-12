@@ -1,0 +1,32 @@
+<div id="header">
+    Name: <input type="text" name="user" id="userField"  ng-model="user.nickName" />
+    <input type="button" class="btn btn-primary submit" id="userFieldButton" value="Change" ng-click="changeNickName()"/>
+    Room:
+    <span ng-show="isEditRoom">
+        <input type="text" class="input" name="roomName" id="roomField"  ng-model="currentRoom.name" />
+        <input type="button" class="btn btn-primary submit" id="addRoomButton" value="Add" ng-click="addRoom(); isEditRoom=false"/>
+        <input type="button" class="btn btn-primary submit" id="updateRoomButton" value="Update" ng-click="updateRoom(); isEditRoom=false"/>
+        <input type="button" class="btn btn-primary submit" id="deleteRoomButton" value="Delete" ng-click="deleteRoom(); isEditRoom=false"/>
+        <input type="button" class="btn btn-primary submit" id="cancelRoomButton" value="Cancel" ng-click="isEditRoom=false"/>
+    </span>
+    <span ng-show="!isEditRoom">
+        <select id="roomSelect" ng-model="currentRoom" ng-options="room.name for room in rooms" ng-change="setCurrentRoom(currentRoom)"></select>
+        <input type="button" class="btn btn-primary submit" id="editRoomButton" value="Change" ng-click="isEditRoom=true"/>
+        <input type="button" class="btn btn-primary submit" id="refreshRoomButton" value="Refresh" ng-click="refreshRoom()"/>
+    </span>
+</div>
+
+<div id="chat" scroll-if>
+    <div class="msg" ng-repeat="message in messages" scroll-item
+         ng-class="message.fromUser.name == user.name ? '' : 'others'">{{message.date | date:'medium'}}<br/>
+        <strong>{{message.fromUser.nickName}} : </strong>{{message.content}}<br/><hr/>
+    </div>
+</div>
+
+<div id="footer">
+    <form ng-submit="submitMsg()">
+        <input type="text" name="chat" id="textField" ng-model="inputText"  placeholder="Say something" class="ng-pristine ng-valid input-block-level"/>
+        <input type="button" class="btn btn-primary submit" id="saySomething" value="Submit" ng-click="submitMsg()"/>
+        <input type="button" class="btn btn-primary submit" id="roomSelectButton" value="Refresh" ng-click="refreshMsg()"/>
+    </form>
+</div>
