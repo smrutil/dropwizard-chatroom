@@ -19,7 +19,7 @@
 <div id="chat" scroll-if>
     <div class="msg" ng-repeat="message in messages" scroll-item
          ng-class="message.fromUser.name == user.name ? '' : 'others'">{{message.date | date:'medium'}}<br/>
-        <strong>{{message.fromUser.nickName}} : </strong>{{message.content}}<br/><hr/>
+        <strong>{{message.fromUser.nickName}} : </strong>{{message.content}}<br/><!--<hr/>-->
     </div>
 </div>
 
