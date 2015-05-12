@@ -59,7 +59,7 @@ public class ChatRoomApplication extends Application<ChatRoomConfiguration> {
         );
 
         //bootstrap.addBundle(new AssetsBundle("/assets/bower_components/", "/bower_components/"));
-        bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/", "/app/angular/index.htm"));
 
         User user = new User("admin");
         ChatRoom chatRoom = new ChatRoom(Constant.DEFAULT_CHAT_ROOM_NAME.value(), user);
